@@ -10,6 +10,7 @@
 </template>
 <script>
 export default {
+    // 相当于把model原来语法糖value和event修改
     model: {
         prop: 'checked',
         event: 'change'
