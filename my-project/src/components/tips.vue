@@ -30,6 +30,8 @@
         </keep-alive>
         <!-- 异步组件 -->
         <async-component></async-component>
+        <!-- 过渡效果组件 -->
+        <transition-component></transition-component>
     </div>
 </template>
 <script>
@@ -41,6 +43,7 @@ import SlotComponent from '../mycomponents/slotComponent.vue';
 import AComponent from '../mycomponents/activeComponents/aComponent';
 import BComponent from '../mycomponents/activeComponents/bComponent';
 import CComponent from '../mycomponents/activeComponents/cComponent';
+import TransitionComponent from '../mycomponents/transitionComponent.vue';
 
 export default {
     components: {
@@ -52,6 +55,7 @@ export default {
         AComponent,
         BComponent,
         CComponent,
+        TransitionComponent,
     },
     data() {
         return {

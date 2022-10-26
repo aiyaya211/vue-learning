@@ -1,7 +1,7 @@
 <template>
     <div>
         <label>
-            <input v-bind:value="myvalue" v-on="inputListeners" />
+            <input v-bind:value="myvalue" v-on="inputListeners" v-focus />
         </label>
     </div>
 </template>
@@ -13,6 +13,16 @@ export default {
        return {
            myvalue: ''
        }
+   },
+   // 自定义指令
+   // 类似于内置的v-show v-if v-model
+   directives: {
+    focus: {
+      // 指令的定义
+      inserted: function (el) {
+        el.focus()
+      }
+    }
    },
    computed: {
     inputListeners: function () {
