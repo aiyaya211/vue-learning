@@ -60,6 +60,11 @@ export default {
             currentComponent: 'AComponent', // 当前组件
         }
     },
+    provide: function() {
+        return {
+            test: this.test
+        }
+    },
     methods: {
         onFocus() {
             console.log('onFocus')
@@ -75,6 +80,9 @@ export default {
                 default:
                     this.currentComponent = AComponent
                 } 
+        },
+        test() {
+            console.log('父组件provide事件');
         }
     }
 }

@@ -7,6 +7,8 @@
 </template>
 <script>
 export default {
+  // inject 
+   inject: ['test'],
    data() {
        return {
            myvalue: ''
@@ -26,6 +28,7 @@ export default {
           // 这里确保组件配合 `v-model` 的工作
           input: function (event) {
             console.log(999)
+            vm.test();
             vm.$emit('input', event.target.value)
           }
         }
