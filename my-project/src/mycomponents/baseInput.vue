@@ -27,7 +27,18 @@ export default {
    computed: {
     inputListeners: function () {
      console.log('inputListeners')
-      let vm = this
+      let arr = [1, 6, 8, 56];
+      console.log(arr)
+      console.log(arr[Symbol.iterator]())
+      let it = arr[Symbol.iterator]();
+      console.log(it.next())
+      console.log(it.next())
+      console.log(it.next())
+      console.log(it.next())
+      console.log(it.next())
+      let mySet = new Set([1, 7, 8, 9]);
+      console.log(mySet)
+      let vm = this;
       // `Object.assign` 将所有的对象合并为一个新对象
       return Object.assign({},
         // 我们从父级添加所有的监听器
@@ -37,7 +48,6 @@ export default {
         {
           // 这里确保组件配合 `v-model` 的工作
           input: function (event) {
-            console.log(999)
             vm.test();
             vm.$emit('input', event.target.value)
           }
