@@ -32,6 +32,10 @@
         <async-component></async-component>
         <!-- 过渡效果组件 -->
         <transition-component></transition-component>
+        <!-- jsx组件 -->
+        <my-com :level="3">
+            我是一个jsx组件
+        </my-com>
     </div>
 </template>
 <script>
@@ -44,6 +48,7 @@ import AComponent from '../mycomponents/activeComponents/aComponent';
 import BComponent from '../mycomponents/activeComponents/bComponent';
 import CComponent from '../mycomponents/activeComponents/cComponent';
 import TransitionComponent from '../mycomponents/transitionComponent.vue';
+import myCom from '../mycomponents/myCom';
 
 export default {
     components: {
@@ -56,6 +61,7 @@ export default {
         BComponent,
         CComponent,
         TransitionComponent,
+        myCom
     },
     data() {
         return {
