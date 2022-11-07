@@ -1,6 +1,13 @@
 <template>
   <div id="app">
-    <tips></tips>
+    <p>
+      <router-link to="/">首页</router-link>
+      <router-link to="/about">生命周期组件</router-link>
+    </p>
+    <div>
+      <router-view></router-view>
+    </div>
+    <!-- <tips></tips> -->
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
@@ -8,13 +15,13 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import tips from './components/tips.vue'
+// import tips from './components/tips.vue'
 
 export default {
   name: 'App',
-  components: {
-    tips
-  }
+  // components: {
+  //   tips
+  // }
 }
 </script>
 

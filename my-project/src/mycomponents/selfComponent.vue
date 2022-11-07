@@ -6,6 +6,10 @@
             v-bind:checked="checked"
             v-on:change="$emit('change', $event.target.checked)"
         >
+        <ul>
+            <li v-for="value in obj" :key="value">{{ value }}</li>
+        </ul>
+        <button @click="addValue">属性添加</button>
     </div>
 </template>
 <script>
@@ -19,7 +23,17 @@ export default {
         checked: Boolean
     },
     data() {
-        return {}
+        return {
+            obj: {
+                name: 'aiyaya',
+                age: 18
+            }
+        }
+    },
+    methods: {
+        addValue() {
+            this.$set(this.obj, 'mood', 'happy');
+        }
     }
 }
 </script>
