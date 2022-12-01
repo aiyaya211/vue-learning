@@ -36,6 +36,15 @@
         <my-com :level="3">
             我是一个jsx组件
         </my-com>
+        <!-- 虚拟滚动列表 -->
+        <virtual-list></virtual-list>
+        <!-- attrs传值 -->
+        <child-dom
+            :foo="foo"
+            :coo="foo"
+            v-on:upRocket="reciveRocket"
+        ></child-dom>
+        
     </div>
 </template>
 <script>
@@ -49,6 +58,9 @@ import BComponent from '../mycomponents/activeComponents/bComponent';
 import CComponent from '../mycomponents/activeComponents/cComponent';
 import TransitionComponent from '../mycomponents/transitionComponent.vue';
 import myCom from '../mycomponents/myCom';
+import VirtualList from '../mycomponents/virtualList.vue';
+import ChildDom from '../mycomponents/childDom.vue';
+
 
 export default {
     components: {
@@ -61,13 +73,17 @@ export default {
         BComponent,
         CComponent,
         TransitionComponent,
-        myCom
+        myCom,
+        VirtualList,
+        ChildDom
     },
     data() {
         return {
             mycontent: '',
             myword: '',
             currentComponent: 'AComponent', // 当前组件
+            foo:"Hello, world",
+            coo:"Hello,aiyaya"
         }
     },
     provide: function() {
@@ -93,6 +109,9 @@ export default {
         },
         test() {
             console.log('父组件provide事件');
+        },
+        reciveRocket(){
+            console.log("reciveRocket success")
         }
     }
 }

@@ -1,7 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
 import asyncComponent from './mycomponents/asyncComponent.vue';
-import router from './router/router'
+import router from './router/router';
+import 'vue-virtual-scroller/dist/vue-virtual-scroller.css'
+import VueVirtualScroller from 'vue-virtual-scroller';
+
+Vue.use(VueVirtualScroller)
+
 
 // 过了1000ms之后才会渲染异步组件的内容
 Vue.component('async-component', function(resolve){
